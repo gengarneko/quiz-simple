@@ -7,6 +7,20 @@
  */
 const getSumOfTriple = (arr, start, end) => {
   // 请实现……
+  if( Math.max.apply(null, arr) < start || Math.min.apply(null, arr) > end || start >= end) {
+    return null
+  } else {
+    const num = arr = arr.sort((a,b)=>{return a-b;}).filter(n => n%3===0)
+    if(start&&!end){
+      return num.filter(n => n>start).reduce((prev, curr) => prev + curr, null)
+    } else if(!start&&end) {
+      return num.filter(n => n<end).reduce((prev, curr) => prev + curr, null)
+    } else if(start&&end) {
+      return num.filter(n => n>start && n<end).reduce((prev, curr) => prev + curr, null)
+    } else {
+      return num.reduce((prev, curr) => prev + curr, null)
+    }
+  }
 };
 
 // * ---------------- 实现的效果：

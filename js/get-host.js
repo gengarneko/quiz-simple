@@ -5,6 +5,9 @@
  */
 const getHostName = (url) => {
   // 请实现……
+  let str = url.match(/^http(s)?:\/\/(.*?)\//)[0]
+  str = str.replace(/^http(s)?:\/\//, '')
+  return str.substring(0, str.length-1)
 };
 
 // * ---------------- 实现的效果：

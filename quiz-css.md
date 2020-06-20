@@ -30,6 +30,17 @@ Demo 代码可以新建一个或多个文件（不限），
 }
 ```
 
+**答：**
+
+```css
+.container 
+	display: flex
+  justify-content: space-between
+	align-items: stretch
+	div.nth-child(1)
+		flex: 1 1 
+```
+
 ## Q2
 
 你用过哪些 CSS 的方法论和工具  
@@ -45,3 +56,38 @@ Demo 代码可以新建一个或多个文件（不限），
 > ```
 
 答：
+
+#### BEM
+
+形如块-元素.修饰符形式的命名，我喜欢这么写：
+
+```css
+.block-element.modifier {}
+```
+
+#### ACSS (atomic css / css 原子化)
+
+一件衣服可以这么拆分：
+
+```
+衣服 includes 面料，花色，颜色，样式
+```
+
+css 名称同样可以如此命名：
+
+```html
+<div class="D(f) W(100px)">
+</div>
+```
+
+`D(f)` 就是 `display: flex`，`W(100px)` 就是 `width: 100px`，简单易懂
+
+#### OOCSS（面向CSS）
+
+常用的 stylus、less 等 css 预编译语言都有类似思想，提倡语义化和代码重用。
+
+```css
+.bg {...}
+.bg-blue {...}
+```
+
